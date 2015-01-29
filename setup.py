@@ -24,6 +24,6 @@ setup(
     tests_require=test_requirements,
     test_suite='unittest2.collector',
     package_data={
-        'crane': ['data/*.conf'],
+        'crane': ['data/*.conf', 'templates/*.html', 'static/css/*', 'static/js/*', 'static/fonts/*', 'static/img/*']
     },
 )

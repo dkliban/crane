@@ -168,9 +168,11 @@ def get_repositories():
     relevant_repo_data = {}
     for repo_registry_id, repo in all_repo_data.items():
         image_ids = [image_json['id'] for image_json in json.loads(repo.images_json)]
-        relevant_repo_data[repo_registry_id] = {'image-ids': image_ids,
+
+        relevant_repo_data[repo_registry_id] = {'image_ids': image_ids,
                                                 'tags': json.loads(repo.tags_json),
                                                 'protected': repo.protected}
+
     return relevant_repo_data
 
 

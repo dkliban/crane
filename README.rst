@@ -157,3 +157,12 @@ contains metadata about a docker repository.
 
 These files are produced by a publish action in
 `Pulp <http://www.pulpproject.org>`_.
+
+Attribution
+-----------
+
+The image of the crane displayed in the corner of the web interface is used with permission from
+user Laitche under `Creative Commons Attribution-Share Alike 3.0 Unported
+<http://creativecommons.org/licenses/by-sa/3.0/deed.en>`_ licence. The original file can be found
+`here
+<http://commons.wikimedia.org/wiki/File:Laitche_Origami_Cranes_-_The_beige_One_-_right.png>`_.

@@ -1,7 +1,7 @@
 """
 Non-public view for use by admins to see a list of repositories served by crane.
 """
-from flask import Blueprint, current_app, json
+from flask import Blueprint, current_app, json, render_template, request
 
 from .. import app_util
 
@@ -22,8 +22,10 @@ def repositories():
     :return:    json string containing a list of docker repositories
     :rtype:     basestring
     """
-    repo_data = app_util.get_repositories()
-    response = current_app.make_response(json.dumps(repo_data))
-    response.headers['Content-Type'] = 'application/json'
-
-    return response
+    if request.headers['Content-Type'] == 'application/json':
+        repo_data = app_util.get_repositories()
+        response = current_app.make_response(json.dumps(repo_data))
+        response.headers['Content-Type'] = 'application/json'
+        return response
+    repos_json = app_util.get_repositories()
+    return render_template("repositories.html", repos_json=repos_json)
